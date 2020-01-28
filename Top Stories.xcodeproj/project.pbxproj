@@ -13,6 +13,7 @@
 		A2AC786323E09C350098491B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2AC786123E09C350098491B /* Main.storyboard */; };
 		A2AC786523E09C3A0098491B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2AC786423E09C3A0098491B /* Assets.xcassets */; };
 		A2AC786823E09C3A0098491B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2AC786623E09C3A0098491B /* LaunchScreen.storyboard */; };
+		A2AC787023E09F950098491B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC786F23E09F950098491B /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2AC786423E09C3A0098491B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2AC786723E09C3A0098491B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2AC786923E09C3A0098491B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2AC786F23E09F950098491B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A2AC786423E09C3A0098491B /* Assets.xcassets */,
 				A2AC786623E09C3A0098491B /* LaunchScreen.storyboard */,
 				A2AC786923E09C3A0098491B /* Info.plist */,
+				A2AC786F23E09F950098491B /* SwiftyJSON.swift */,
 			);
 			path = "Top Stories";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				A2AC786023E09C350098491B /* SourcesViewController.swift in Sources */,
 				A2AC785C23E09C350098491B /* AppDelegate.swift in Sources */,
 				A2AC785E23E09C350098491B /* SceneDelegate.swift in Sources */,
+				A2AC787023E09F950098491B /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
