@@ -9,7 +9,7 @@
 import UIKit
 
 class SourcesViewController: UITableViewController {
-
+    
     var sources = [[String: String]]()
     let apiKey = "5d892509a49046a087917c466fa80d09"
     
@@ -18,27 +18,18 @@ class SourcesViewController: UITableViewController {
         self.title = "News Sources"
         let query = "https://newsapi.org/v1/sources?language=en&country=us&apiKey=\(apiKey)"
         DispatchQueue.global(qos: .userInitiated).async {
-           [unowned self] in
-                if let url = URL(string: query) {
+            [unowned self] in
+            if let url = URL(string: query) {
                 if let data = try? Data(contentsOf: url) {
-                   let json = try! JSON(data: data)
-                   if json["status"] == "ok" {
-                     self.parse(json: json)
-                      return
-        }
-                    /*
-        if let url = URL(string: query) {
-           if let data = try? Data(contentsOf: url) {
-              let json = try! JSON(data: data)
-              if json["status"] == "ok" {
-                self.parse(json: json)
-                 return
-                */
-              }
-           }
+                    let json = try! JSON(data: data)
+                    if json["status"] == "ok" {
+                        self.parse(json: json)
+                        return
+                    }
+                }
+            }
             self.loadError()
         }
-        //self.loadError()
     }
     
     func parse (json : JSON) {
@@ -49,23 +40,21 @@ class SourcesViewController: UITableViewController {
             let source = ["id" : id, "name" : name, "description" : description]
             sources.append(source)
             DispatchQueue.main.async {
-                [unowned self in]
+                [unowned self] in
                 self.tableView.reloadData()
             }
         }
-        tableView.reloadData()
     }
     
     func loadError() {
         DispatchQueue.main.async {
-            [unowned self in]
-            self.tableView.reloadData()
+            [unowned self] in
+            let alert = UIAlertController(title: "Loading Error",
+                                          message: "There was a problem loading the news feed",
+                                          preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-    let alert = UIAlertController(title: "Loading Error",
-                                message: "There was a problem loading the news feed",
-                         preferredStyle: .actionSheet)
-    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
